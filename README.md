@@ -1,0 +1,2 @@
+# DiscordBadgePatcherJPN
+日本語用のDiscordのプロフィールバッジのカスタマイズ拡張機能。

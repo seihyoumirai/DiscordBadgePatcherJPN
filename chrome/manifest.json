@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Discord All Badges",
+  "version": "1.0.0",
+  "author": "SeihyouMirai",
+  "description": "Discordの全てのバッジを適用する。",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": [
+    "https://discord.com/*",
+    "https://*.discord.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "logo/logo.png",
+    "32": "logo/logo.png",
+    "48": "logo/logo.png",
+    "128": "logo/logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://discord.com/*",
+        "https://www.discord.com/*",
+        "https://canary.discord.com/*",
+        "https://ptb.discord.com/*"
+      ],
+      "js": ["bridge.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://discord.com/*",
+        "https://www.discord.com/*",
+        "https://canary.discord.com/*",
+        "https://ptb.discord.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "world": "MAIN"
+    }
+  ]
+}
